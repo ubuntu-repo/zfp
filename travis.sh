@@ -3,8 +3,12 @@ set -e
 
 # pass additional args in $1 (starting with whitespace character)
 run_all () {
-  run_all_cmd="ctest -V -C Debug -DC_STANDARD=${C_STANDARD:-99} -DCXX_STANDARD=${CXX_STANDARD:-98} -S \"$TRAVIS_BUILD_DIR/cmake/travis.cmake\""
+#  run_all_cmd="ctest -V -C Debug -DC_STANDARD=${C_STANDARD:-99} -DCXX_STANDARD=${CXX_STANDARD:-98} -S \"$TRAVIS_BUILD_DIR/cmake/travis.cmake\""
+  run_all_cmd="cmake .. -DC_STANDARD=${C_STANDARD:-99} -DCXX_STANDARD=${CXX_STANDARD:-98}"
   eval "${run_all_cmd}$1"
+
+  cmake --build .
+  ctest -V -C Debug
 }
 
 mkdir build

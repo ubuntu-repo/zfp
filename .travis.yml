@@ -7,7 +7,7 @@ env:
 matrix:
   include:
     - os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc-6
       addons:
         apt:
@@ -15,10 +15,10 @@ matrix:
           packages:
             - gcc-6
             - cython3
-#            - python3-numpy
+            - python3-numpy
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-6
       addons:
         apt:
@@ -26,22 +26,24 @@ matrix:
           packages:
             - gcc-6
             - cython
+            - python-numpy
 
       env:
         - COVERAGE=ON
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: clang-3.6
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty']
           packages:
             - clang-3.6
-            - cython
+            - cython3
+            - python3-numpy
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: clang
       before_install:
         - export LD_LIBRARY_PATH=/usr/local/clang/lib:$LD_LIBRARY_PATH
@@ -50,11 +52,11 @@ matrix:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty']
           packages:
             - clang-3.6
-            - cython
-
+            - cython3
+            - python3-numpy
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-4.4
       addons:
         apt:
@@ -86,7 +88,7 @@ matrix:
             - cython3
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-4.9
       addons:
         apt:
@@ -94,67 +96,73 @@ matrix:
           packages:
             - clang-3.6
             - cython3
+            - python3-numpy
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-5
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
           packages:
             - clang-3.6
-            - cython
+            - cython3
+            - python3-numpy
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-6
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
           packages:
             - clang-3.6
-            - cython
+            - cython3
+            - python3-numpy
       env:
         - C_STANDARD=90
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-6
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
           packages:
             - clang-3.6
-            - cython
+            - cython3
+            - python3-numpy
       env:
         - C_STANDARD=11
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-6
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
           packages:
             - clang-3.6
-            - cython
+            - cython3
+            - python3-numpy
       env:
         - CXX_STANDARD=11
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-6
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
           packages:
             - clang-3.6
-            - cython
+            - cython3
+            - python3-numpy
       env:
         - CXX_STANDARD=14
 
     - os: linux
-      dist: trusty
+      dist: xenial
       compiler: gcc-6
       addons:
         apt:
