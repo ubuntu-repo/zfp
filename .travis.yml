@@ -16,8 +16,6 @@ matrix:
             - gcc-6
             - cython3
             - python3-numpy
-      env:
-        - BUILD_PYTHON=on
 
     - os: linux
       dist: trusty
@@ -25,7 +23,10 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+          packages:
+            - gcc-6
+            - cython
+
       env:
         - COVERAGE=ON
 
@@ -35,7 +36,9 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty']
-          packages: clang-3.6
+          packages:
+            - clang-3.6
+            - cython
 
     - os: linux
       dist: trusty
@@ -45,7 +48,10 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty']
-          packages: clang-3.4
+          packages:
+            - clang-3.6
+            - cython
+
 
     - os: linux
       dist: trusty
@@ -53,7 +59,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-4.4
+          packages:
+            - clang-3.6
+            - cython
 
     - os: linux
       dist: trusty
@@ -61,7 +69,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-4.7
+          packages:
+            - clang-3.6
+            - cython
 
     - os: linux
       dist: trusty
@@ -69,7 +79,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-4.8
+          packages:
+            - clang-3.6
+            - cython
 
     - os: linux
       dist: trusty
@@ -77,7 +89,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-4.9
+          packages:
+            - clang-3.6
+            - cython
 
     - os: linux
       dist: trusty
@@ -85,7 +99,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-5
+          packages:
+            - clang-3.6
+            - cython
 
     - os: linux
       dist: trusty
@@ -93,7 +109,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+          packages:
+            - clang-3.6
+            - cython
       env:
         - C_STANDARD=90
 
@@ -103,7 +121,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+          packages:
+            - clang-3.6
+            - cython
       env:
         - C_STANDARD=11
 
@@ -113,7 +133,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+          packages:
+            - clang-3.6
+            - cython
       env:
         - CXX_STANDARD=11
 
@@ -123,7 +145,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+          packages:
+            - clang-3.6
+            - cython
       env:
         - CXX_STANDARD=14
 
@@ -133,7 +157,9 @@ matrix:
       addons:
         apt:
           sources: ubuntu-toolchain-r-test
-          packages: gcc-6
+          packages:
+            - clang-3.6
+            - cython
 
     - os: osx
       osx_image: xcode7.3

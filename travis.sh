@@ -3,7 +3,7 @@ set -e
 
 # pass additional args in $1 (starting with whitespace character)
 run_all () {
-  run_all_cmd="ctest -V -C Debug -DC_STANDARD=${C_STANDARD:-99} -DCXX_STANDARD=${CXX_STANDARD:-98} -DBUILD_PYTHON=${BUILD_PYTHON:-off} -S \"$TRAVIS_BUILD_DIR/cmake/travis.cmake\""
+  run_all_cmd="ctest -V -C Debug -DC_STANDARD=${C_STANDARD:-99} -DCXX_STANDARD=${CXX_STANDARD:-98} -S \"$TRAVIS_BUILD_DIR/cmake/travis.cmake\""
   eval "${run_all_cmd}$1"
 }
 
@@ -12,10 +12,10 @@ cd build
 
 if [ -n "${COVERAGE}" ]; then
   # build
-  run_all " -DBUILD_CFP=ON -DBUILD_OPENMP=ON -DBUILD_CUDA=OFF -DWITH_COVERAGE=ON"
+  run_all " -DBUILD_CFP=ON -DBUILD_PYTHON=ON -DBUILD_OPENMP=ON -DBUILD_CUDA=OFF -DWITH_COVERAGE=ON"
 else
-  # build/test without OpenMP, with CFP (and custom namespace)
-  run_all " -DBUILD_CFP=ON -DCFP_NAMESPACE=cfp2 -DBUILD_OPENMP=OFF -DBUILD_CUDA=OFF"
+  # build/test without OpenMP, with CFP (and custom namespace) and zfPy
+  run_all " -DBUILD_CFP=ON -DBUILD_PYTHON=ON -DCFP_NAMESPACE=cfp2 -DBUILD_OPENMP=OFF -DBUILD_CUDA=OFF"
 
   rm -rf ./* ;
 
